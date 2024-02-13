@@ -145,6 +145,24 @@ nvim_lsp.astro.setup {
   capabilities = capabilities
 }
 
+nvim_lsp.gopls.setup {
+  -- on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
+  capabilities = capabilities
+}
+
+nvim_lsp.golangci_lint_ls.setup {
+  -- on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
+  capabilities = capabilities
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,

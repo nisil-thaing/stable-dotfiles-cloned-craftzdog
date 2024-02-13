@@ -13,7 +13,8 @@ keymap.set('n', 'dw', 'vb"_d')
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- Clear search
-keymap.set('n', '<leader>h', ':nohlsearch<Return><C-w>w')
+-- keymap.set('n', '<leader>h', ':nohlsearch<Return><C-w>w')
+keymap.set('n', '<leader>h', ':nohlsearch<Return>')
 
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
